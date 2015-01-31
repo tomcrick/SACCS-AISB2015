@@ -12,31 +12,31 @@
 
 \begin{document}
 
-\title{Digital Footprints: Envisaging  and Analysing\\Online Tendencies}
+\title{Digital Footprints: Envisaging and Analysing\\Online Behaviour}
 
-\author{Giles Oatley \and Tom Crick \and Mohamed
-  Mostafa\institute{Department of Computing, Cardiff Metropolitan
-    University, UK; email: \{goatley,tcrick,mmostafa\}@cardiffmet.ac.uk} }
+\author{Giles Oatley \and Tom Crick\institute{Department of Computing, Cardiff Metropolitan
+    University, UK; email: \{goatley,tcrick,mmostafa\}@cardiffmet.ac.uk} \and Mohamed
+  Mostafa}
 
 \maketitle
 \bibliographystyle{AISB2008}
 
 \begin{abstract}
-Our long-term research goal is the development of complex (and robust)
-behavioural modelling and profiling using a multitude of online
-datasets; in this paper we continue looking at relevant tools for use
-in big social data, specifically here on how to `envisage' this
-complex information. We present a novel way of representing
-personality traits (Five Factors) with behavioural features (fantasy
-and profanity).  We also present some preliminary ideas around
-developing a scalable solution to swear words.
+Our long-term research goal is the development of complex (and
+adaptive) behavioural modelling and profiling using a multitude of
+online datasets; in this paper we look at suitable tools for use in
+big social data, specifically here on how to `envisage' this complex
+information. We present a novel way of representing personality traits
+(using the Five Factor model) with behavioural features (fantasy and
+profanity).  We also present some preliminary ideas around developing
+a scalable solution to modelling behaviour using swear words.
 \end{abstract}
 
 
 \section{Introduction}
 
 There are large-scale research efforts in developing new and robust
-techniques for modelling online behaviour and identity. There are
+techniques for modelling online behaviour and identity. There exists
 numerous domains in which it is essential to obtain knowledge about
 user profiles or models of software applications, including
 intelligent agents, adaptive systems, intelligent tutoring systems,
@@ -44,10 +44,10 @@ recommender systems, e-commerce applications and knowledge management
 systems~\cite{schiaffino+amandi:2009}. The rise of Web 2.0 and social
 networking has facilitated the publishing of user-generated content on
 an exponential scale; its analysis is becoming increasingly important
-(and applicable) to the empirical study of society (and societal
+(and applicable) to the empirical study of society (and thus societal
 change).
 
-Big datasets from social networking platforms is now being used for a
+Big datasets from social networking platforms are now being used for a
 multitude of purposes, alongside the obvious advertising, marketing
 and revenue generation; increasingly for government monitoring of
 citizens\footnote{Twitter Transparency Report 2014:\\
@@ -62,24 +62,21 @@ scale has significantly changed qualitative and quantitative social
 research, with its analysis becoming increasingly important to the
 empirical study of society. There are interesting sociological uses of
 studying or mining big social data, for instance exploring
-cyber-physical crowds using location-based social networks or the
+cyber-physical crowds using location-tagged social networks or the
 study of personality with large-scale benchmark social datasets and
 corpora.
 
 However, this ``big social data'' from social media platforms, for
 instance social networks, blogs, gaming, shopping and review sites,
 differs significantly from more traditional/formal sources.  With the
-advent of the social web, there is now orders of magnitude more data
+advent of the social web, there are now orders of magnitude more data
 available relating to uncensored natural language, requiring the
 development of new techniques that can meaningful analyse it. This
-uncensored language is rich in `unnatural' language phenomena (as
-opposed to `natural' language, used in formal/traditional published
-media such as books and newspapers), defined as ``{\emph{informal
-expressions, variations, spelling errors...irregular proper nouns,
-emoticons, unknown words}}''\footnote{2nd Unnatural Language
-Processing Contest, part of the 17th Annual Meeting of the Association
-for Natural Language Processing (NLP2011):
-\url{http://www.anlp.jp/nlp2011/}}.  We have been interested in
+uncensored language is rich in `unnatural' language (as opposed to
+`natural' language, used in formal/traditional published media such as
+books and newspapers), defined as ``{\emph{informal expressions,
+variations, spelling errors...irregular proper nouns, emoticons,
+unknown words}}''~\cite{ULPCproc}.  We have been interested in
 profiling complex behaviours ~\cite{oatley+crick:2014} and in this
 paper we include in our models such bad behaviour that is found in big
 social data, for example so-called unnatural language with its poor
@@ -93,16 +90,16 @@ script. For example, leet spellings of the word ``leet'' include
 or {\emph{3l33t}}. See Perea et al.~\cite{perea-et-al:2008} for an
 discussion of leet from a cognitive processing perspective.
 
-\section{Fantasy and Profanity}
+\section{Modelling Fantasy and Profanity}
 
-\subsection{Rude Words: A Study of Pornography}
+\subsection{Rude Words: The Language of Pornography}
 
 A research project investigating opinions on a range of topics related
 to pornography usage was carried out; a web-based questionnaire
 received over five thousand respondents ({\emph{n}}=5490). Several of
 the questions were open-ended, for instance how the person became
 involved with the subject of pornography, their particular interests
-and so on, eliciting on occasion very long answers (c.2000
+and so on, eliciting a number of detailed responses (c.2000
 words). From the initial findings~\cite{smith-et-al:2013}, the data is
 ill-structured, with frequent usage of bad grammar and contains a
 large number of jargon (swear) words relating to pornography and
@@ -110,10 +107,10 @@ sexuality.
 
 An aim of the original study was the investigation of the usage of
 fantasy. This resonated with our general interest in determining
-behaviour from data, and so we decided to explore the language
-characteristics of the answers related specifically with fantasy. We
-analysed the respondents text using the psycholinguistic databases
-LIWC and MRC. The Dictionary of Affect in Language
+behaviour from data, and so explored the language characteristics of
+the answers related specifically to fantasy. We analysed the
+respondents text using the psycholinguistic databases LIWC and
+MRC. The Dictionary of Affect in Language
 (DAL)~\cite{sweeney+whissell:1984} was also planned to be used, due to
 its specific uses for imagery-based language. We also used methods
 derived from LIWC and MRC to determine personality traits and measures
@@ -137,7 +134,7 @@ The `{\emph{can't}}' and `{\emph{wouldn't}}' choices clearly indicate
 respondents utilising pornography more strongly as a form of
 fantasy. For this we explored the Five Factors personality traits, in
 particular expecting some correlation with the {\emph{Openness to
-Experience}} factor.
+Experience}} factor (see Figures~\ref{fig:openA}--\ref{fig:openD}.
 
 \begin{table}
 \centering
@@ -161,15 +158,36 @@ things I shouldn't do}}'')}
 \end{table}
 
 
-\begin{figure}[!hp]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{images/openA.jpg}
 \caption{Openness to experience for A(y) (dotted) versus non-A (dashed)}
 \label{fig:openA}
 \end{figure}
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{images/openB.jpg}
+\caption{Openness to experience for B(y) (dotted) versus non-A (dashed)}
+\label{fig:openB}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{images/openC.jpg}
+\caption{Openness to experience for C(y) (dotted) versus non-A (dashed)}
+\label{fig:openC}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{images/openD.jpg}
+\caption{Openness to experience for D(y) (dotted) versus non-A (dashed)}
+\label{fig:openD}
+\end{figure}
+
 Analysis is ongoing, with the results to be published in the near
-future; however there does appear to be a strong negative correlation
+future; however there appears to be a strong negative correlation
 between participants who chose ``{\emph{A. To see things I might
 do}}'' versus ``{\emph{B. To see things I can't do}}'', as originally
 hypothesised. What was less convincing was our analysis of the Five
@@ -190,19 +208,19 @@ close proximity to one another in the network are semantically
 disambiguated. WordNet
 Affect\footnote{\url{http://wndomains.fbk.eu/wnaffect.html}}, a
 hierarchical set of emotional categories, and
-SentiWordNet\footnote{\url{http://sentiwordnet.isti.cnr.it/}}, synets
+SentiWordNet\footnote{\url{http://sentiwordnet.isti.cnr.it/}}, synsets
 are assigned sentiment scores (positivity, negativity, objectivity),
 are built on top of WordNet.
 
 Millwood-Hargrave's study~\cite{millwood-hargrave:2000} for Ofcom
 (formerly, the Broadcasting Standards Commission), the UK's regulatory
 and competition authority for the broadcasting, telecommunications and
-postal industries, in 2000 was designed to test people’s attitudes to
+postal industries, in 2000 was designed to test people's attitudes to
 swearing and offensive language, and to examine the degree to which
 context played a role in their reactions. Included in the report was
 attitudes towards swearing and offensive language `in life', including
-a range of swear words and terms of abuse. Appendix 2’s `list of
-words' contained positions of the top swear words (saying
+a range of swear words and terms of abuse. Appendix 2's `list of
+words' contained positions of the top swear words (categorised as
 ``{\emph{very severe}}'', ``{\emph{fairly severe}}'', ``{\emph{quite
 mild}}'' and ``{\emph{not swearing}}'') and their ranking from 1998 to
 2000.
@@ -215,7 +233,7 @@ influence of vulgar, obscene, aggressive, abusive and blasphemous
 language. Unfortunately we do not have resources such as databases in
 the literature; furthermore, WordNet does not contain the range of
 swear words we encountered in our data and is no use for
-disambiguating our text. Wikipedia, however, fared much better. But
+disambiguating our text. Wikipedia, however, fared much better; but
 even better than these were Roger's Profanisaurus and Urban
 Dictionary.
 
@@ -235,11 +253,10 @@ peer-reviewed dictionary of slang or cultural words or phrases not
 typically found in standard dictionaries, with words or phrases on
 Urban Dictionary having multiple definitions, usage examples and tags.
 
-
-We created different gazetteers related to rude words (available upon
-request); one list was based on Wikipedia entries, and another on
-lists from Urban Dictionary. The Wikipedia list was created from link
-text on the Wikipedia porn sub-genre
+We created different gazetteers related to rude words; one list was
+based on Wikipedia entries, and another on lists from Urban
+Dictionary. The Wikipedia list was created from link text on the
+Wikipedia porn sub-genre
 page\footnote{\url{http://en.wikipedia.org/wiki/List_of_pornographic_sub-genres}}
 (link ``anchor text'' is a typical approach in semantic relatedness
 studies). This was comprised of 250 words. The Urban Dictionary list
@@ -268,20 +285,19 @@ Profanisaurus.
 Advances in psychology research have suggested it is possible for
 personality to be determined from digital
 data~\cite{pennebaker+king:1999,vazire+gosling:2004,iacobelli-et-al:2011}.
-Recent studies in the USA have suggested certain keywords and phrases
-can signal underlying tendencies and that this can form the basis of
-identifying certain aspects of
-personality~\cite{woodworth-et-al:2012}.  Extrapolating forward
-suggests that by investigation of an individual's online comments it
-may be possible to identify individual's personality traits. Initial
-evidence in support of this hypothesis was demonstrated in 2012 by
-analysis of Twitter data for indicators of psychotic
-behaviour~\cite{sumner-et-al:2012}. While in the past this has mainly
-been the textual information contained in blogs, status posts and
-photo comments~\cite{blamey-et-al-2012,blamey-et-al-2013}, there is
-also a wealth of information in the other ways of interacting with
-online artefacts. For instance, it is possible to observe the
-ordering/timings of button clicks of a user. Several authors have
+Recent studies~\cite{woodworth-et-al:2012} have suggested certain
+keywords and phrases can signal underlying tendencies and that this
+can form the basis of identifying certain aspects of personality.
+Extrapolating this suggests that by investigation of an individual's
+online comments it may be possible to identify individual's
+personality traits. Initial evidence in support of this hypothesis was
+demonstrated in 2012 by analysis of Twitter data for indicators of
+psychotic behaviour~\cite{sumner-et-al:2012}. While in the past this
+has mainly been the textual information contained in blogs, status
+posts and photo comments~\cite{blamey-et-al-2012,blamey-et-al-2013},
+there is also a wealth of information in the other ways of interacting
+with online artefacts. For instance, it is possible to observe the
+ordering/timings of button clicks of a user. Several researchers have
 looked at personality prediction (e.g. Five Factor personality traits)
 based on information in a user's Facebook
 profile~\cite{back-et-al:2010,golbeck-et-al:2001} and
@@ -291,17 +307,17 @@ as also demonstrating significant correlations with fine affect
 admiration~\cite{mohammad+kiritchenko:2013}. There are also several
 strands of related work based on the benchmark myPersonality
 Project\footnote{\url{http://mypersonality.org/}}
-dataset~\cite{celli-et-al:2013}, providing a medium for well-needed
+dataset~\cite{celli-et-al:2013}, providing a platform for much-needed
 comparative studies.
 
 Mairesse et al.~\cite{mairesse-et-al:2007} highlighted the use of
-features from psycholinguistic databases
+features from the psycholinguistic databases
 LIWC~\cite{pennebaker-et-al:2001} and MRC~\cite{wilson:1988} to create
 a range of statistical models for each of the Five Factor personality
 traits~\cite{norman:1963,peabody+goldberg:1989}.
 
 In previous work~\cite{oatley+crick:2014} we utilised these methods to
-develop a complex behavioural profile that included `two faces'; to
+develop a complex behavioural profile that included `two faces' to
 model that we can have several different modes of operation (ego
 states). We performed our Five Factor analysis, and elaborated two
 sets of Five Factor results for each user. We chose Chernoff
@@ -319,7 +335,10 @@ Factors are displayed as five features on a stylised face, where:
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\columnwidth]{images/newtwofaces.jpg}
-\caption{Two faces of a person. Personality traits from the Five Factors model are mapped on a Chernoff face (see later figure for specific trait mappings). Two different faces are drawn from two different linguistic sources, for the same person.}
+\caption{Two faces of a person. Personality traits from the Five
+  Factors model are mapped on a Chernoff face (see later figure for
+  specific trait mappings). Two different faces are drawn from two
+  different linguistic sources, for the same person.}
 \label{fig:twofaces}
 \end{figure}
 
@@ -328,14 +347,14 @@ the Five Factors model, there are well known
 limitations~\cite{eysenck:1992,paunonen+jackson:2000,block:2010} that
 are often overlooked by researchers. In particular, it has been
 criticised for its limited scope, methodology and the absence of an
-underlying theory. Attempts to replicate the Big Five in other
+underlying theory. However, attempts to replicate the Big Five in other
 countries with local dictionaries have succeeded in some countries but
 not in others~\cite{szirmak+deraad:1994,defruyt-et-al:2004}. While
 \cite{costa+mccrae:1992} claim that their Five Factors model
 ``represents basic dimensions of personality'', psychologists have
 identified important trait models, for instance Cattell's 16
-Personality Factors~\cite{cattell:1946} and Eysenck's biologically
-based theory~\cite{eysenck:1947}.
+Personality Factors~\cite{cattell:1946} and Eysenck's
+biologically-based theory~\cite{eysenck:1947}.
 
 
 \section{Envisaging Information}
@@ -346,7 +365,7 @@ and efficiency~\cite{tufte:2001,tufte:1997,tufte:1990}. We have
 integrated the profanity and fantasy behavioural features into our
 Chernoff face representing the Five Factor traits -- see
 Figure~\ref{fig:blueface} -- represented on a Chernoff face are the
-Five Factorsplus the additional behaviours for swearing level
+Five Factors plus the additional behaviours for swearing level
 (darkness of blue colour on face) and fantasy level (amount of
 `thought bubbles').
 
@@ -365,20 +384,19 @@ Five Factorsplus the additional behaviours for swearing level
 
 Elsewhere we have presented ways to fuse social network (graph)
 information with geographical
-information~\cite{oatley-et-al:2006,oatley+howell:2013}, and from
+information~\cite{oatley-et-al:2006,oatley+crick-gisruk2015}, and from
 spatial statistics there exists methods for space and time such as the
 Knox and Mantel indices. In this section we look at a method to
 represent temporal events, something very necessary when developing a
 behavioural profile.
 
 Our data comes from an online portal for a European Union (EU)
-international scholarship mobility hosted at a university in the
-UK. The case study looked at how people interact with complex online
-information systems, the online portal for submitting applications. We
-analysed the document uploading behaviour (also motivation letters,
-and social media interactions) of the applicants. By examining the
-upload footprint for the users we determined several classes of
-behaviour.
+international scholarship mobility hosted at a UK university. The case
+study looked at how people interact with complex online information
+systems, the online portal for submitting applications. We analysed
+the document uploading behaviour (also motivation letters, and social
+media interactions) of the applicants. By examining the upload
+footprint for the users we determined several classes of behaviour.
 
 There were several thousand applications submitted by over a thousand
 candidates, applying to 10 EU universities and 10 non-EU
@@ -435,7 +453,7 @@ and then uploaded all of their documents and submitted within the
 segment S3 (60-90\% of timeline). This is represented by Class A, the
 first row. Successive rows can be interpreted in the same manner.
 
-\begin{table}
+\begin{table}[!ht]
 \centering
 \begin{tabularx}{\columnwidth}{Y Y Y Y Y Y}
 %\begin{tabular}{c c c} 
@@ -457,7 +475,7 @@ Class & {\emph{n}} & {\emph{T0}} & {\emph{T1}} & {\emph{T2}} & {\emph{T3}} \\
 \label{tbl:apptlseg}
 \end{table}
 
-\begin{table*}[!ht]
+\begin{table*}[!htb]
 \centering
 \begin{tabularx}{\textwidth}{c X l}
 %\begin{tabular}{c c c} 
@@ -483,9 +501,9 @@ submission to last days & Cautious\\
 \end{table*}
 
 We did not want to ascribe a premature alias to the behaviours, as we
-recognise that there are several possible interpretations. We have
-used the `Potential Alias' column in Table~\ref{tbl:classdesc} to
-indicate some initial thoughts.
+recognise that there are several possible interpretations;
+nevertheless, we have used the `Potential Alias' column in
+Table~\ref{tbl:classdesc} to indicate some initial thoughts.
 
 Combining this information with the earlier trait and behaviour model,
 it could be possible to present several faces along the timeline, or
