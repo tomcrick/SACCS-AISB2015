@@ -6,6 +6,7 @@
 \usepackage{enumerate}
 \usepackage{url}
 \usepackage[multiple]{footmisc}
+\usepackage{flushend}
 
 % fix table columns
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
@@ -14,8 +15,8 @@
 
 \title{Digital Footprints: Envisaging and Analysing\\Online Behaviour}
 
-\author{Giles Oatley \and Tom Crick\institute{Department of Computing, Cardiff Metropolitan
-    University, UK; email: \{goatley,tcrick,mmostafa\}@cardiffmet.ac.uk} \and Mohamed
+\author{Giles Oatley \and Tom Crick\institute{~All authors: Department of Computing, Cardiff Metropolitan
+    University, UK; \{goatley,tcrick,mmostafa\}@cardiffmet.ac.uk} \and Mohamed
   Mostafa}
 
 \maketitle
@@ -76,19 +77,24 @@ uncensored language is rich in `unnatural' language (as opposed to
 `natural' language, used in formal/traditional published media such as
 books and newspapers), defined as ``{\emph{informal expressions,
 variations, spelling errors...irregular proper nouns, emoticons,
-unknown words}}''~\cite{ULPCproc}.  We have been interested in
-profiling complex behaviours ~\cite{oatley+crick:2014} and in this
-paper we include in our models such bad behaviour that is found in big
-social data, for example so-called unnatural language with its poor
-language construction but also context dependent acronyms, jargon,
-``leetspeak'' and swear words or profanity.  Leet, also known as eleet
-or leetspeak, is an alternative alphabet for the English language that
-is used primarily on the Internet and in geek/cyber communities. It
-uses various combinations of ASCII characters to replace Latin
-script. For example, leet spellings of the word ``leet'' include
-{\emph{1337}} and {\emph{l33t}}; eleet may be spelled {\emph{31337}}
-or {\emph{3l33t}}. See Perea et al.~\cite{perea-et-al:2008} for an
-discussion of leet from a cognitive processing perspective.
+unknown words}}''\footnote{2nd Unnatural Language Processing Contest,
+part of the 17th Annual Meeting of the Association for Natural
+Language Processing (NLP2011): \url{http://www.anlp.jp/nlp2011/}}.  We
+have been interested in profiling complex behaviours
+~\cite{oatley+crick:2014}, particularly for crime
+informatics~\cite{oatley+crick_asonam2014,oatley+crick_fosintsi2014}
+and in this paper we include in our models such bad behaviour that is
+found in big social data, for example so-called unnatural language
+with its poor language construction but also context dependent
+acronyms, jargon, ``leetspeak'' and swear words or profanity.  Leet,
+also known as eleet or leetspeak, is an alternative alphabet for the
+English language that is used primarily on the Internet and in
+geek/cyber communities. It uses various combinations of ASCII
+characters to replace Latin script. For example, leet spellings of the
+word ``leet'' include {\emph{1337}} and {\emph{l33t}}; eleet may be
+spelled {\emph{31337}} or {\emph{3l33t}}. See Perea et
+al.~\cite{perea-et-al:2008} for an discussion of leet from a cognitive
+processing perspective.
 
 \section{Modelling Fantasy and Profanity}
 
@@ -111,12 +117,12 @@ behaviour from data, and so explored the language characteristics of
 the answers related specifically to fantasy. We analysed the
 respondents text using the psycholinguistic databases LIWC and
 MRC. The Dictionary of Affect in Language
-(DAL)~\cite{sweeney+whissell:1984} was also planned to be used, due to
-its specific uses for imagery-based language. We also used methods
-derived from LIWC and MRC to determine personality traits and measures
-such as formality and deception. We also wanted to get a general feel
-for the level of the text, and to also see if there were any
-correlations between literacy and readability.
+(DAL)~\cite{sweeney+whissell:1984} was also used, due to its specific
+uses for imagery-based language. We used methods derived from LIWC and
+MRC to determine personality traits and measures such as formality and
+deception. We wanted to get a general feel for the level of the text,
+and to see if there were any correlations between literacy and
+readability.
 
 Initially we focused on the specific questions that might reveal
 something about the role of fantasy. For instance, among the many
@@ -217,7 +223,7 @@ Millwood-Hargrave's study~\cite{millwood-hargrave:2000} for Ofcom
 and competition authority for the broadcasting, telecommunications and
 postal industries, in 2000 was designed to test people's attitudes to
 swearing and offensive language, and to examine the degree to which
-context played a role in their reactions. Included in the report was
+context played a role in their reactions. Included in the report were
 attitudes towards swearing and offensive language `in life', including
 a range of swear words and terms of abuse. Appendix 2's `list of
 words' contained positions of the top swear words (categorised as
@@ -453,7 +459,7 @@ and then uploaded all of their documents and submitted within the
 segment S3 (60-90\% of timeline). This is represented by Class A, the
 first row. Successive rows can be interpreted in the same manner.
 
-\begin{table}[!ht]
+\begin{table}
 \centering
 \begin{tabularx}{\columnwidth}{Y Y Y Y Y Y}
 %\begin{tabular}{c c c} 
@@ -475,7 +481,7 @@ Class & {\emph{n}} & {\emph{T0}} & {\emph{T1}} & {\emph{T2}} & {\emph{T3}} \\
 \label{tbl:apptlseg}
 \end{table}
 
-\begin{table*}[!htb]
+\begin{table*}
 \centering
 \begin{tabularx}{\textwidth}{c X l}
 %\begin{tabular}{c c c} 
@@ -519,7 +525,11 @@ time, but behaviours change. Likewise we would expect the blueness
 
 The linguistic methods for determining personality traits are still in
 their infancy, and we have already noted some of the opposition to the
-lexical hypothesis~\cite{block:2010}. We would expect that in time
+lexical hypothesis~\cite{block:2010}. Generally, information conveyed
+by the use of terms in human dialog studied in linguistics follows
+precise rules; other important rules are now introduced in the
+philosophy of language, investigating the meanings of terms and their
+extra-linguistic reference. We would expect that in time these
 additional information sources, like how people project identities
 through personal websites~\cite{vazire+gosling:2004}, judging people
 by their music preferences~\cite{rentfrow+gosling:2006},
@@ -538,11 +548,15 @@ of inexact word matching to overcome the difficulties of unnatural
 language. We have made no attempt to use inexact string matching or to
 make use of a leetspeak parser. This will form part of future work.
 
-To assist with the ongoing knowledge modelling problem in this domain
-we recognise the need to utilise specific lexicons that keep pace with
-the language used, for instance the use of Urban Dictionary to resolve
-swear words. We need to study how in what precise manner this resource
-keeps pace with popular culture.
+The Web constitutes a world made of a precise formal-social ontology
+which hardly reflect the complexity of human personality; it is a
+difficult enterprise to try to mediate between the personal world of
+humans and the impersonal one of the Web. To assist with the ongoing
+knowledge modelling problem in this domain we recognise the need to
+utilise specific lexicons that keep pace with the language used, for
+instance the use of Urban Dictionary to resolve swear words. We thus
+need to study how in what precise manner this resource keeps pace with
+popular culture.
 
 \bibliography{aisb2015}
 
